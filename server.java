@@ -69,8 +69,11 @@ public class server {
                             }
                         } else {
                             attempts--;
+                            if(attempts == 0) {
+                                out.println("You lost. The word is " + word + ", you have " + attempts + " guess left");
+                                break;
+                            }
                         }
-
                         out.println(String.valueOf(guessedWord) + ", you have " + attempts + " guess left\nYour next guess: ");
                     } else {
                         out.println("You lost. The word is " + word + ", you have " + attempts + " guess left");
